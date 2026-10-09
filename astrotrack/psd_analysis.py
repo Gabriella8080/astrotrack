@@ -1,7 +1,8 @@
 from datetime import datetime
-import numpy as np
-import matplotlib.pyplot as plt
+
 import h5py
+import matplotlib.pyplot as plt
+import numpy as np
 
 plt.rcParams["font.family"] = "Times New Roman"
 
@@ -47,7 +48,7 @@ def load_hdf5(
             timestamps = obs_group[timestamps_key][:]
             utc_timestamps = [
                 datetime.fromtimestamp(ts[0]).strftime("%H:%M:%S")
-                for ts in timestamps  # noqa: E501
+                for ts in timestamps
             ]
 
     except (OSError, KeyError, ValueError) as e:

@@ -1,11 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from skyfield.api import EarthSatellite, load
-from astropy.coordinates import EarthLocation
-from astropy import units as u
 from collections import Counter
 from datetime import datetime
+
 import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import numpy as np
+from astropy import units as u
+from astropy.coordinates import EarthLocation
+from skyfield.api import EarthSatellite, load
 
 # Subset selection:
 

@@ -1,10 +1,11 @@
-from skyfield.api import EarthSatellite, load
-from matplotlib.animation import PillowWriter
-from tqdm import tqdm
+import os
+from datetime import datetime
+
 import matplotlib.pyplot as plt
 import numpy as np
-from datetime import datetime
-import os
+from matplotlib.animation import PillowWriter
+from skyfield.api import EarthSatellite, load
+from tqdm import tqdm
 
 
 def lat_lon_to_xyz(re, lat, lon):

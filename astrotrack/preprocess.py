@@ -1,17 +1,16 @@
 # SkyField
-from skyfield.api import EarthSatellite, load
-from skyfield.timelib import Time
-
-# Astropy
-from astropy.coordinates import EarthLocation, AltAz
-from astropy.coordinates import CartesianRepresentation, ITRS
-from astropy.time import Time  # noqa: F811
-from astropy import units as u
-
 # Numerical
 from datetime import timedelta
-import pandas as pd
+
 import numpy as np
+import pandas as pd
+from astropy import units as u
+
+# Astropy
+from astropy.coordinates import ITRS, AltAz, CartesianRepresentation, EarthLocation
+from astropy.time import Time
+from skyfield.api import EarthSatellite, load
+from skyfield.timelib import Time
 from tqdm import tqdm
 
 ts = load.timescale()

@@ -12,6 +12,9 @@ dist/
 # Pytest
 .pytest_cache/
 
+# Ruff
+.ruff_cache/
+
 # Jupyter
 .ipynb_checkpoints/
 
