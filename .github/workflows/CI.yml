@@ -32,11 +32,6 @@ jobs:
           ruff check astrotrack tests
 
       # Pytests
-      - name: Run tests (pytest)
-        run: |
-          pytest -v
-
       - name: Run tests with coverage
         run: |
-          pip install pytest-cov
-          pytest --cov=astrotrack --cov-report=term-missing
+          pytest -v --cov=astrotrack --cov-report=term-missing

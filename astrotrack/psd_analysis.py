@@ -47,8 +47,7 @@ def load_hdf5(
             spectra = obs_group[spectra_key][:]
             timestamps = obs_group[timestamps_key][:]
             utc_timestamps = [
-                datetime.fromtimestamp(ts[0]).strftime("%H:%M:%S")
-                for ts in timestamps
+                datetime.fromtimestamp(ts[0]).strftime("%H:%M:%S") for ts in timestamps
             ]
 
     except (OSError, KeyError, ValueError) as e:
