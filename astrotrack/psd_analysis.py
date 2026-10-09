@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 
 import h5py
 import matplotlib.pyplot as plt
@@ -161,8 +162,8 @@ def plot_psd_with_satellite_metric(
     v_min: float = 1e14,
     v_max: float = 8e16,
     show_legend: bool = False,
-    threshold: float = None,
-    vertical_lines: list[str] = None,
+    threshold: Optional[float] = None,
+    vertical_lines: Optional[list[str]] = None,
     cmap: str = "magma",
 ):
     """
@@ -283,18 +284,18 @@ def plot_psd_satellite_time_series(
     spectra: np.ndarray,
     utc_timestamps: list[str],
     satellite_data: list[dict],
-    norad_list: list[str] = None,
+    norad_list: Optional[list[str]] = None,
     satellite_variable: str = "Elevations",
     R: float = 2000,
-    psd_freq_ranges: list[tuple] = None,
-    target_freqs_mhz: list[float] = None,
+    psd_freq_ranges: Optional[list[tuple]] = None,
+    target_freqs_mhz: Optional[list[float]] = None,
     bandwidth: int = 200,
     vmin: float = 1e14,
     vmax: float = 8e16,
     cmap: str = "magma",
-    line_colors: list[str] = None,
-    threshold: float = None,
-    vertical_lines: list[str] = None,
+    line_colors: Optional[list[str]] = None,
+    threshold: Optional[float] = None,
+    vertical_lines: Optional[list[str]] = None,
 ):
     """
     Plot PSD panels at single/multiple frequency, with corresponding
