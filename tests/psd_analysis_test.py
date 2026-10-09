@@ -1,13 +1,14 @@
-import numpy as np
-import pytest
 from datetime import datetime
 
+import numpy as np
+import pytest
+
 from astrotrack.psd_analysis import (
-    hdf5_index,
+    build_time_index_map,
     freq_index,
     get_frequency_bin_range,
+    hdf5_index,
     iso_to_hms,
-    build_time_index_map,
 )
 
 

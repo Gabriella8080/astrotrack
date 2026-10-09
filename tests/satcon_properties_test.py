@@ -1,17 +1,18 @@
-import pytest
 from datetime import datetime
+
 import matplotlib
+import pytest
 
 matplotlib.use("Agg")
 from astrotrack.satcon_properties import (
-    get_norads,
     filter_by_norads,
     filter_by_time,
-    filter_nth,
     filter_custom,
-    plot_satellite_metric,
-    plot_max_elevation_histogram,
+    filter_nth,
+    get_norads,
     plot_flyover_histogram_by_norad,
+    plot_max_elevation_histogram,
+    plot_satellite_metric,
 )
 
 

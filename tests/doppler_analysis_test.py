@@ -1,5 +1,5 @@
-import pytest
 import matplotlib
+import pytest
 
 matplotlib.use("Agg")
 from astrotrack.doppler_analysis import check_doppler_resolution
