@@ -36,12 +36,8 @@ dev = [
     "build>=1.0",
     "twine>=6.0",
     "black",
-    "ruff"
 ]
 
 [tool.black]
 target-version = ["py312"]
 line-length = 88
-
-[tool.ruff.lint]
-ignore = ["FA100", "DTZ001", "DTZ006", "RUF046", "RUF013", "BLE001", "S112"]
