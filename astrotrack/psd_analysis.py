@@ -1,5 +1,6 @@
+from __future__ import annotations
+
 from datetime import datetime
-from typing import Optional
 
 import h5py
 import matplotlib.pyplot as plt
@@ -75,7 +76,7 @@ def hdf5_index(freq_mhz, total_bins, full_bandwidth_mhz=200):
     int
         Corresponding bin index.
     """
-    bin_idx = int(round(freq_mhz / (full_bandwidth_mhz / total_bins)))
+    bin_idx = round(freq_mhz / (full_bandwidth_mhz / total_bins))
     return max(0, min(bin_idx, total_bins - 1))
 
 
@@ -162,8 +163,8 @@ def plot_psd_with_satellite_metric(
     v_min: float = 1e14,
     v_max: float = 8e16,
     show_legend: bool = False,
-    threshold: Optional[float] = None,
-    vertical_lines: Optional[list[str]] = None,
+    threshold: float | None = None,
+    vertical_lines: list[str] | None = None,
     cmap: str = "magma",
 ):
     """
@@ -284,18 +285,18 @@ def plot_psd_satellite_time_series(
     spectra: np.ndarray,
     utc_timestamps: list[str],
     satellite_data: list[dict],
-    norad_list: Optional[list[str]] = None,
+    norad_list: list[str] | None = None,
     satellite_variable: str = "Elevations",
     R: float = 2000,
-    psd_freq_ranges: Optional[list[tuple]] = None,
-    target_freqs_mhz: Optional[list[float]] = None,
+    psd_freq_ranges: list[tuple] | None = None,
+    target_freqs_mhz: list[float] | None = None,
     bandwidth: int = 200,
     vmin: float = 1e14,
     vmax: float = 8e16,
     cmap: str = "magma",
-    line_colors: Optional[list[str]] = None,
-    threshold: Optional[float] = None,
-    vertical_lines: Optional[list[str]] = None,
+    line_colors: list[str] | None = None,
+    threshold: float | None = None,
+    vertical_lines: list[str] | None = None,
 ):
     """
     Plot PSD panels at single/multiple frequency, with corresponding
@@ -380,7 +381,7 @@ def plot_psd_satellite_time_series(
     if target_freqs_mhz is not None:
         bin_groups = {}
         for f in np.atleast_1d(target_freqs_mhz):
-            b = int(round(f / bandwidth * total_bins))
+            b = round(f / bandwidth * total_bins)
             b = max(0, min(b, total_bins - 1))
             if b not in bin_groups:
                 bin_groups[b] = [f]
@@ -399,8 +400,8 @@ def plot_psd_satellite_time_series(
         ax_time.set_title("Narrowband PSD Time-Series")
 
     for ax, (low, high) in zip(ax_psd_list, psd_freq_ranges):
-        start = int(round(low / bandwidth * total_bins))
-        end = int(round(high / bandwidth * total_bins))
+        start = round(low / bandwidth * total_bins)
+        end = round(high / bandwidth * total_bins)
         end = min(end, total_bins - 1)
         subset = spectra[:, start:end]
         im = ax.imshow(

@@ -1,5 +1,7 @@
 # SkyField
 # Numerical
+from __future__ import annotations
+
 from datetime import timedelta
 
 import numpy as np
@@ -16,7 +18,7 @@ from tqdm import tqdm
 ts = load.timescale()
 
 
-def parse_tle_file(tle_file: str, satcon_name: str = None):
+def parse_tle_file(tle_file: str, satcon_name: str | None = None):
     """
     Parse a TLE file and return a list of (line1, line2) tuples,
     supporting 3LEs, TLEs, mixed formats, or single TLE entries.
@@ -261,7 +263,7 @@ def load_satellite_data(
     obs_lon,
     R: float,
     horizon_data,
-    satcon: str = None,
+    satcon: str | None = None,
     start_index=0,
 ):
     """

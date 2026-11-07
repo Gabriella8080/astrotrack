@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+
 # Distribution / packaging
 build/
 dist/

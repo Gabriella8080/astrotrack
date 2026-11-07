@@ -228,7 +228,7 @@ def plot_flyover_histogram_by_norad(
         bins = np.arange(ids.min(), ids.max() + bin_width, bin_width)
 
         plt.figure(figsize=figsize)
-        counts, _, _ = plt.hist(
+        _counts, _, _ = plt.hist(
             ids, bins=bins, weights=vals, color=color, alpha=0.9, edgecolor="none"
         )
 
