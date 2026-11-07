@@ -1,6 +1,6 @@
 # astrotrack: Characterising LEO Satellite RFI in Wide-Field Radio Astronomy
 
-[![PyPI](https://img.shields.io/pypi/v/astrotrack?color=FFB6C1)](https://pypi.org/project/astrotrack/) [![Python](https://img.shields.io/pypi/pyversions/astrotrack?color=FF1493)](https://pypi.org/project/astrotrack/) [![License](https://img.shields.io/badge/license-BSD--3-FFB7A5)](LICENSE) [![Tests](https://img.shields.io/github/actions/workflow/status/Gabriella8080/astrotrack/CI.yml?label=tests&color=DB7093)](https://github.com/Gabriella8080/astrotrack/actions/workflows/CI.yml)
+[![PyPI](https://img.shields.io/pypi/v/astrotrack?color=FFB6C1)](https://pypi.org/project/astrotrack/) [![License](https://img.shields.io/badge/license-BSD--3-FF1493)](LICENSE) [![Tests](https://img.shields.io/github/actions/workflow/status/Gabriella8080/astrotrack/CI.yml?label=tests&color=FFB7A5)](https://github.com/Gabriella8080/astrotrack/actions/workflows/CI.yml)
 
 
 ## Overview
